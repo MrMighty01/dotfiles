@@ -1,11 +1,4 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
+--Xmonad config of Abinav and I call myself as Mr Mighty :)
 
 import XMonad
 
@@ -50,7 +43,7 @@ myBorderWidth   = 2
 myModMask       = mod4Mask
 
 --Workspaces
-myWorkspaces    = [" ;) ","Surf","Stream","4","5","Edit","Music","obi",":)"]
+myWorkspaces    = [" Prime "," Surf "," Stream "," 4 "," 5 "," Edit "," Music "," obi "," :) "]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
