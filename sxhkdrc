@@ -1,0 +1,32 @@
+#keybindings
+#Volume
+XF86AudioRaiseVolume
+	pamixer -i 2
+
+XF86AudioLowerVolume
+	pamixer -d 2
+
+XF86AudioMute
+	pamixer -t
+
+#Brightness 
+XF86MonBrightnessUp
+	brillo -q -A 2
+
+XF86MonBrightnessDown
+	brillo -q -U 2
+	
+#Screenshot
+Print 
+       maim Pictures/screenshots/full_`date '+%S_%M_%H'`.png
+
+shift + Print 
+       maim -s Pictures/screenshots/sel_`date '+%S_%M_%H'`.png
+
+#run launcher
+super + p 
+       rofi -show drun
+super + shift + e 
+       rofi -show emoji
+super + shift + m
+       rofi -show calc -no-show-match -no-sort 
