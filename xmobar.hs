@@ -56,8 +56,8 @@ Config {
                           
         -- memory usage monitor
         , Run Memory         [ "--template" ," Mem: <usedratio>% "
-                             , "--Low"      , "20"        -- units: %
-                             , "--High"     , "90"        -- units: %
+                             , "--Low"      , "40"        -- units: %
+                             , "--High"     , "85"        -- units: %
                              , "--low"      , "green"
                              , "--normal"   , "yellow"
                              , "--high"     , "red"
