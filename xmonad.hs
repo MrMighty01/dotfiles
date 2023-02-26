@@ -50,6 +50,12 @@ myWorkspaces    = [" Prime "," Surf "," Stream "," 4 "," 5 "," Edit "," Music ",
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#aa00cc"
 
+
+--Windows open in a workspace 
+
+windowCount :: X (Maybe String)
+windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
+
 --mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
 --mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
 
@@ -195,8 +201,6 @@ myManageHook = composeAll
 ------------------------------------------------------------------------
 -- Event handling
 
--- * EwmhDesktops users should change this to ewmhDesktopsEventHook
---
 -- Defines a custom handler function for X Events. The function should
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
@@ -214,11 +218,24 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = return ()
 
+--Xmobar 
+myXmobarPP :: PP
+myXmobarPP = def
+       {   ppSep              = white " | "
+         , ppCurrent          = orange . xmobarBorder "Bottom" "#ff5533" 4 
+	 , ppExtras           = [windowCount]
+       }
+     where 
+       white :: String -> String
+       white        = xmobarColor "#f8f8f2" ""
+       yellow       = xmobarColor "#f1fa8c" ""
+       orange       = xmobarColor "#ff5533" ""
+
 --main 
 main = xmonad 
-     . ewmhFullscreen 
+  -- . ewmhFullscreen 
      . ewmh 
-     . withEasySB (statusBarProp "xmobar ~/.config/xmobar/xmobar.hs" (pure def)) defToggleStrutsKey
+     . withEasySB (statusBarProp "xmobar ~/.config/xmobar/xmobar.hs" (pure myXmobarPP)) defToggleStrutsKey
      $ def {
       -- simple stuff
         terminal           = myTerminal,
