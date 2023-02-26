@@ -75,7 +75,7 @@ Config {
                                        -- discharging status
                                        , "-o"	, "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                       , "-O"	, "<fc=green>Charging</fc>"
                                        -- charged status
                                        , "-i"	, "<fc=#006000>Charged</fc>"
                              ] 50
