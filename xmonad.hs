@@ -43,7 +43,7 @@ myBorderWidth   = 2
 myModMask       = mod4Mask
 
 --Workspaces
-myWorkspaces    = [" Prime "," Surf "," Stream "," 4 "," 5 "," Edit "," Music "," obi "," :) "]
+myWorkspaces    = [" Prime "," Surf "," Stream "," dunno "," Paatipie "," Edit "," Music "," obi "," :) "]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -51,13 +51,11 @@ myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#aa00cc"
 
 
---Windows open in a workspace 
+--No of Windows open in a workspace 
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
---mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
---mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -66,7 +64,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     [ ((modm, xK_Return), spawn (myTerminal))
 
-    , ((modm, xK_f), spawn (myBrowser))
+    , ((modm, xK_b), spawn (myBrowser))
 
     , ((modm,               xK_p     ), spawn "rofi -show drun")
 
@@ -121,7 +119,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
     -- Toggle the status bar gap
-     , ((modm              , xK_b     ), sendMessage ToggleStruts)
+     --, ((modm              , xK_f     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -224,6 +222,7 @@ myXmobarPP = def
        {   ppSep              = white " | "
          , ppCurrent          = orange . xmobarBorder "Bottom" "#ff5533" 4 
 	 , ppExtras           = [windowCount]
+	 ,ppOrder             = \[ws, l, windowCount, ex] -> [ws, l, ex,windowCount]
        }
      where 
        white :: String -> String
@@ -235,7 +234,7 @@ myXmobarPP = def
 main = xmonad 
   -- . ewmhFullscreen 
      . ewmh 
-     . withEasySB (statusBarProp "xmobar ~/.config/xmobar/xmobar.hs" (pure myXmobarPP)) defToggleStrutsKey
+     . withEasySB (statusBarProp "xmobar ~/.config/xmobar/xmobar.hs" (pure myXmobarPP)) toggleStrutsKey 
      $ def {
       -- simple stuff
         terminal           = myTerminal,
@@ -259,3 +258,6 @@ main = xmonad
         startupHook        = myStartupHook
     }
 
+    where 
+     toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
+     toggleStrutsKey XConfig { modMask = m } = (m, xK_f)
