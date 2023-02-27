@@ -11,7 +11,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignmen t
-   , template = " <fc=#0088cc>%XMonadLog%</fc> }{ <fc=#00b3b3>%cpu%</fc> | <fc=#ccaa00>%memory%</fc> | <fc=#f8104c>%battery%</fc> | <fc=#aa80ff>%date%</fc> "
+   , template = " <fc=#0088cc>%XMonadLog%</fc> }{ <fc=#00b3b3>%cpu%</fc> | <fc=#bfe600>%memory%</fc> | <fc=#f8104c>%battery%</fc> | <fc=#aa80ff>%date%</fc> "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
