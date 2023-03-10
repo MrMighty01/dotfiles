@@ -43,7 +43,7 @@ myBorderWidth   = 2
 myModMask       = mod4Mask
 
 --Workspaces
-myWorkspaces    = [" Prime "," Surf "," Stream "," dunno "," Paatipie "," Edit "," Music "," obi "," :) "]
+myWorkspaces    = [" Prime "," Surf "," Sketch "," dunno "," Paatipie "," Edit "," Music "," obi "," :) "]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
