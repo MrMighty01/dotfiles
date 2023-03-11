@@ -1,6 +1,7 @@
   Config { 
   -- appearance
      font        =  "Font Awesome 6 Free Solid 16"
+   , additionalFonts = [ "Bitstream Vera Sans Mono 16"]  
    , bgColor     =  "black"
    , fgColor     =  "white"
    , position    =  Static { xpos = 0, ypos = 0, width = 1920, height = 25 }
@@ -39,7 +40,7 @@
         , Run Cpu            [ "-t" , " Cpu: <total>% "
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
-                             , "--low"      , "green"
+                             , "--low"      , "#66ff00"
                              , "--normal"   , "yellow"
                              , "--high"     , "red"
                              ] 10
@@ -56,8 +57,8 @@
         -- memory usage monitor
         , Run Memory         [ "--template" ," Mem: <usedratio>% "
                              , "--Low"      , "40"        -- units: %
-                             , "--High"     , "85"        -- units: %
-                             , "--low"      , "green"
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "#66ff00"
                              , "--normal"   , "yellow"
                              , "--high"     , "red"
                              ] 10
