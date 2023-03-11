@@ -11,7 +11,7 @@
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignmen t
-   , template = " <fc=#0088cc>%XMonadLog%</fc> }{ <fc=#00b3b3>%cpu%</fc> | <fc=#e04a5c>%memory%</fc> | <fc=#5ea149>%battery%</fc> | <fc=#aa80ff>%date%</fc> "
+   , template = " <fc=#0088cc>%XMonadLog%</fc> }{ <fc=#00b3b3>%cpu%</fc> | <fc=#e04a5c>%memory%</fc> | <fc=#e28a00>%battery%</fc> | <fc=#aa80ff>%date%</fc> "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -65,11 +65,11 @@
 
         -- battery monitor
         , Run Battery        [ "--template" , "Batt: <acstatus>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "80"        -- units: %
+                             , "--Low"      , "15"        -- units: %
+                             , "--High"     , "75"        -- units: %
                              , "--low"      , "red"
-                             , "--normal"   , "yellow"
-                             , "--high"     , "green"
+                             , "--normal"   , "#66ff00"
+                             , "--high"     , "#66ff00"
 
                              , "--" -- battery specific options
                                        -- discharging status
