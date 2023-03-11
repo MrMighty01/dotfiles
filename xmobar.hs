@@ -1,11 +1,10 @@
-Config { 
-
-   -- appearance
-     font =         "xft:Awesome 5 Free Solid:style=Solid:size=14, Bitstream Vera Sans Mono:size=14:bold:antialias=true"
-   , bgColor =      "black"
-   , fgColor =      "white"
-   , position =     Top
-   , border =       BottomB
+  Config { 
+  -- appearance
+     font        =  "Font Awesome 6 Free Solid 16"
+   , bgColor     =  "black"
+   , fgColor     =  "white"
+   , position    =  Static { xpos = 0, ypos = 0, width = 1920, height = 25 }
+   , border      =  BottomB 
    , borderColor =  "#646464"
 
    -- layout
