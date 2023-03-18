@@ -73,7 +73,7 @@
 
                              , "--" -- battery specific options
                                        -- discharging status
-                                       , "-o"	, "<left><fc=#e28a00>%</fc> (<timeleft>)"
+                                       , "-o"	, "<left><fc=#e28a00>%</fc>" --(<timeleft>)"
                                        -- AC "on" status
                                        , "-O"	, "<fc=#66ff00>Charging</fc>"
                                        -- charged status
