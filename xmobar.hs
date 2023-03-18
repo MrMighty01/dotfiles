@@ -66,18 +66,18 @@
         -- battery monitor
         , Run Battery        [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "15"        -- units: %
-                             , "--High"     , "75"        -- units: %
+                             , "--High"     , "50"        -- units: %
                              , "--low"      , "red"
-                             , "--normal"   , "#66ff00"
+                             , "--normal"   , "yellow"
                              , "--high"     , "#66ff00"
 
                              , "--" -- battery specific options
                                        -- discharging status
-                                       , "-o"	, "<left>% (<timeleft>)"
+                                       , "-o"	, "<left><fc=#e28a00>%</fc> (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=green>Charging</fc>"
+                                       , "-O"	, "<fc=#66ff00>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<fc=#66ff00>Charged</fc>"
                              ] 50
 
         -- time and date indicator 
