@@ -11,8 +11,7 @@
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignmen t
-   , template = " <fc=#0088cc>%XMonadLog%</fc> }{ <fc=#00b3b3>%cpu%</fc> | <fc=#e04a5c>%memory%</fc> | <fc=#e28a00>%battery%</fc> | <fc=#aa80ff>%date%</fc> "
-
+   , template = " <fc=#0088cc>%XMonadLog%</fc> }{<fc=#00b3b3>%cpu%</fc> | <fc=#e04a5c>%memory%</fc> | <fc=#e28a00>%battery%</fc> | <fc=#aa80ff>%date%</fc>"
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
    , hideOnStart =      False   -- start with window unmapped (hidden)
@@ -37,7 +36,7 @@
                              ] 10
 
         -- cpu activity monitor
-        , Run Cpu            [ "-t" , " Cpu: <total>% "
+        , Run Cpu            [ "-t" , "Cpu: <total>%"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "--low"      , "#66ff00"
@@ -73,11 +72,11 @@
 
                              , "--" -- battery specific options
                                        -- discharging status
-                                       , "-o"	, "<left><fc=#e28a00>%</fc>" --(<timeleft>)"
+                             , "-o"	, "<left><fc=#e28a00>%</fc>" --(<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#66ff00>Charging</fc>"
+                             , "-O"	, "<fc=#66ff00>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#66ff00>Charged</fc>"
+                             , "-i"	, "<fc=#66ff00>Charged</fc>"
                              ] 50
 
         -- time and date indicator 
