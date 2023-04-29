@@ -43,7 +43,10 @@ myBorderWidth   = 2
 myModMask       = mod4Mask
 
 --Workspaces
-myWorkspaces    = [" Prime "," Surf "," Sketch "," Smt "," Paatipie "," Edit "," Music "," obi "," :) "]
+myWorkspaces    = [" \x0BE7 "," \x0BE8 "," \x0BE9 "," \x0BEA "," \x0BEB "," \x0BEC "," \x0BED "," \x0BEE "," \x0BEF "]
+
+--Fonts
+myFonts = "xft:Monospace:size=16"
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -220,7 +223,7 @@ myStartupHook = return ()
 myXmobarPP :: PP
 myXmobarPP = def
        {   ppSep              = white " | "
-         , ppCurrent          = orange . xmobarBorder "Bottom" "#ff5533" 4 
+         , ppCurrent          = orange . xmobarBorder "Top" "#ff5533" 4 
 	 , ppExtras           = [windowCount]
 	 ,ppOrder             = \[ws, l, windowCount, ex] -> [ws, l, ex,windowCount]
        }
