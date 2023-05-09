@@ -23,6 +23,9 @@ Print
 shift + Print 
        maim -s Pictures/screenshots/sel_`date '+%S_%M_%H'`.png
 
+alt + x
+       maim -s | xclip -selection clipboard -t image/png 
+
 #run launcher
 super + p 
        rofi -show drun
