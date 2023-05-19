@@ -33,3 +33,8 @@ super + shift + e
        rofi -show emoji
 super + shift + m
        rofi -show calc -no-show-match -no-sort 
+
+#relax2020
+alt + p 
+      ~/git/relax/pause.sh &
+
