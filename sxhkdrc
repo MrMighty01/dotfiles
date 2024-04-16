@@ -18,10 +18,10 @@ XF86MonBrightnessDown
 	
 #Screenshot
 Print 
-       maim Pictures/screenshots/full_`date '+%S_%M_%H'`.png
+       maim ~/pupa/screenshots/full_`date '+%S_%M_%H'`.png
 
 shift + Print 
-       maim -s Pictures/screenshots/sel_`date '+%S_%M_%H'`.png
+       maim -s ~/pupa/screenshots/sel_`date '+%S_%M_%H'`.png
 
 alt + x
        maim -s | xclip -selection clipboard -t image/png 
