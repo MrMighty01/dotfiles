@@ -1,10 +1,11 @@
   Config { 
   -- appearance
-     font        =  "Font Awesome 6 Free Solid 16"
-   , additionalFonts = [ "Bitstream Vera Sans Mono 16"]  
+     font        =  "Font Awesome 6 Free Solid 18"
+   , additionalFonts = [ "Bitstream Vera Sans Mono 18"]  
    , bgColor     =  "black"
    , fgColor     =  "white"
-   , position    =  Static { xpos = 0, ypos = 0, width = 1920, height = 25 }
+   , alpha       =   180
+   , position    =  Static { xpos = 0, ypos = 0, width = 1920, height = 26 }
    , border      =  BottomB 
    , borderColor =  "#646464"
 
@@ -81,7 +82,8 @@
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date " <fc=#ff66cc>%b %d %Y</fc> <fc=white>|</fc> %H:%M:%S " "date" 10
+        --, Run Date " <fc=#ff66cc>%b %d %Y</fc> <fc=white>|</fc> %H:%M:%S " "date" 10
+        , Run Date " <fc=#ff66cc>%b %d %Y</fc> <fc=white>|</fc> %H:%M" "date" 50
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
